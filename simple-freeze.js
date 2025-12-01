@@ -49,6 +49,7 @@ class FreezeImages {
       canvas.width = img.width;
       canvas.height = img.height;
       canvas.className = `${this.canvasCls} ff-active`;
+      canvas.getContext('2d').imageSmoothingEnabled = false;
       canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
 
       // Creates container that will hold both <img> and <canvas>
