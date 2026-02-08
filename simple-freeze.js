@@ -24,7 +24,7 @@ class FreezeImages {
 
         .ff-container img,
         .ff-container canvas {
-          align-self: end;
+          align-self: start;
         }
 
         .ff-container.ff-hover:hover .ff-active {
@@ -35,11 +35,13 @@ class FreezeImages {
         .ff-container.ff-hover:hover .ff-inactive {
           position: static;
           opacity: 1;
+          z-index: 1;
         }
 
         .ff-inactive {
           position: absolute;
           opacity: 0;
+          z-index: -99;
         }
       `;
       document.head.appendChild(style);
