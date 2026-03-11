@@ -54,11 +54,14 @@ class FreezeImages {
 
       // Creates <canvas> of GIF and copies data of first frame of animation
       let canvas = document.createElement("canvas");
-      canvas.width = img.width;
-      canvas.height = img.height;
+      let imgWidth = img.width || img.naturalWidth;
+      let imgHeight = img.height || img.naturalHeight;
+
+      canvas.width = imgWidth;
+      canvas.height = imgHeight;
       canvas.className = `${this.canvasCls} ff-active`;
       canvas.getContext('2d').imageSmoothingEnabled = this.smoothing;
-      canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+      canvas.getContext('2d').drawImage(img, 0, 0, imgWidth, imgHeight);
 
       // Creates container that will hold both <img> and <canvas>
       let wrapper = document.createElement("div");
